@@ -14,9 +14,10 @@ namespace Storm.InterviewTest.Hearthstone.Core.Common.Queries
             this.cache = cache;
         }
 
-        public IEnumerable<ICard> Execute(string queryText = "")
+        public IEnumerable<ICard> Execute(string queryText)
         {
-            return cache.FindAll<ICard>().Where(x => x.Name.Contains(queryText) || x.Type.ToString() == queryText || x.PlayerClass == queryText);
+            var qt = queryText ?? "";
+            return cache.FindAll<ICard>().Where(x => x.Name.Contains(qt) || x.Type.ToString() == qt || x.PlayerClass == qt);
         }
     }
 }
