@@ -23,13 +23,13 @@ namespace Storm.InterviewTest.Hearthstone.Core.Features.Cards.Services
 
 		public IEnumerable<CardModel> Search(string searchTerm)
 		{
-			var cards = _cardCache.Query(new SearchCardsQuery(searchTerm));
+			var cards =  new SearchCardsQuery(_cardCache).Execute(searchTerm);
 			return Mapper.Map<IEnumerable<ICard>, IEnumerable<CardModel>>(cards);
 		}
 
 		public IEnumerable<CardModel> GetHeroes()
 		{
-			var heroes = _cardCache.Query(new FindPlayableHeroCardsQuery());
+			var heroes = new FindPlayableHeroCardsQuery(_cardCache).Execute();
 			return Mapper.Map<IEnumerable<ICard>, IEnumerable<CardModel>>(heroes);
 		}
 	}

@@ -23,7 +23,7 @@ namespace Storm.InterviewTest.Hearthstone.Core.Features.Cards.Mapping
 				.Include<SpellCard, SpellModel>()
 				.Include<HeroCard, HeroModel>()
 				.ForMember(m => m.PlayerClass,
-					opt => opt.ResolveUsing(m => _hearthstoneCardCache.Query(new FindHeroCardQuery(m.PlayerClass))))
+					opt => opt.ResolveUsing(m => new FindHeroCardQuery(_hearthstoneCardCache).Execute(m.PlayerClass)))
 				.ForMember(m => m.PlayerClassText, opt =>
 				{
 					opt.NullSubstitute("Neutral");

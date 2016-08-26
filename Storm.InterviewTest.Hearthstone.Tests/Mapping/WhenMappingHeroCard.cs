@@ -36,7 +36,7 @@ namespace Storm.InterviewTest.Hearthstone.Tests.Mapping
 			_result.Name.ShouldEqual(_card.Name);
 			_result.ImageUrl.ShouldEqual(_card.ImageUrl);
 			_result.PlayerClass.ShouldBeOfType(typeof(HeroModel));
-			_result.PlayerClass.Name.ShouldEqual("My Hero");
+			_result.PlayerClass.Name.ShouldEqual("My Hero Priest");
 			_result.Health.ShouldEqual(_card.Health);
 			_result.Attack.ShouldEqual(_card.Attack);
 		}

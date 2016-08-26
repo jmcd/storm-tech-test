@@ -22,6 +22,7 @@
     <IISExpressUseClassicPipelineMode />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -121,7 +122,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CardController.cs" />
-    <Compile Include="Core\Common\Queries\Base\SingleCardLinqQueryObject.cs" />
     <Compile Include="Core\Common\Queries\FindHeroCardQuery.cs" />
     <Compile Include="Core\Common\Queries\FindPlayableHeroCardsQuery.cs" />
     <Compile Include="Core\Features\Cards\Models\HeroModel.cs" />
@@ -131,9 +131,6 @@
     <Compile Include="Core\Features\Cards\Services\CardSearchService.cs" />
     <Compile Include="Core\Features\Cards\ICardSearchService.cs" />
     <Compile Include="Controllers\MyDecksController.cs" />
-    <Compile Include="Core\Common\Queries\Base\CardListLinqQueryObject.cs" />
-    <Compile Include="Core\Common\Queries\FindAllCardsQuery.cs" />
-    <Compile Include="Core\Common\Queries\Base\SingleCardQueryObject.cs" />
     <Compile Include="Core\Features\Cards\Domain\HeroCard.cs" />
     <Compile Include="Core\Features\Cards\HearthstoneCardTypeConverter.cs" />
     <Compile Include="Core\Features\Cards\Mapping\CardsMappingProfile.cs" />
@@ -153,7 +150,6 @@
     <Compile Include="Core\Features\Cards\Domain\RarityTypeOptions.cs" />
     <Compile Include="Core\Features\Cards\Domain\SpellCard.cs" />
     <Compile Include="Core\Features\Cards\Domain\WeaponCard.cs" />
-    <Compile Include="Core\Common\Queries\Base\CardListQueryObject.cs" />
     <Compile Include="Core\Features\Cards\Services\HearthstoneCardCache.cs" />
     <Compile Include="Core\Features\Cards\HearthstoneCardsTypeConverter.cs" />
     <Compile Include="Core\Features\Cards\IHearthstoneCardCache.cs" />
@@ -243,7 +239,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>55414</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55414/</IISUrl>
+          <IISUrl>http://localhost:55415/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
